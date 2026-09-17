@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Halara Hosting | STR Income Analysis – 2145 Beach Front Drive, Sevierville TN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Owner-facing projections are shared by link, not published to the open
+       web. Keeps a client's address and financials out of search results. -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --sol-forest:#1c6373;
+      --sol-sage:#2a8a9e;
+      --sol-cream:#f7f3ee;
+      --sol-stone:#ece7df;
+      --sol-ink:#1c1917;
+      --sol-muted:#6b6b63;
+      --sol-card:#ffffff;
+      --sol-accent:#c8b18a;
+      --sol-gradient-1: linear-gradient(135deg, #1c6373 0%, #2a8a9e 100%);
+      --sol-gradient-2: linear-gradient(135deg, #2a8a9e 0%, #4cb4ca 100%);
+      --sol-gradient-3: linear-gradient(135deg, rgba(28,99,115,0.95) 0%, rgba(42,138,158,0.95) 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #f7f3ee 0%, #ece7df 100%);
+      color: var(--sol-ink);
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(42,138,158,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(28,99,115,0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow:
+        0 8px 32px rgba(28, 99, 115, 0.1),
+        0 2px 8px rgba(28, 99, 115, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    .glass-card-dark {
+      background: rgba(28, 99, 115, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(42, 138, 158, 0.2);
+    }
+
+    .shadow-luxury {
+      box-shadow:
+        0 20px 60px rgba(28, 99, 115, 0.15),
+        0 8px 24px rgba(28, 99, 115, 0.1),
+        0 2px 8px rgba(28, 99, 115, 0.05);
+    }
+
+    .shadow-soft {
+      box-shadow:
+        0 4px 16px rgba(28, 99, 115, 0.08),
+        0 2px 8px rgba(28, 99, 115, 0.04);
+    }
+
+    .gradient-text {
+      background: var(--sol-gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      /* background-clip:text clips glyphs to the line box. At large sizes with
+         a tight line-height that shears the tops of numerals and the tails of
+         descenders, so the text needs its own box with breathing room. */
+      display: inline-block;
+      line-height: 1.35;
+      padding: 0.08em 0.04em 0.16em;
+    }
+
+    @keyframes borderGlow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .border-glow {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--sol-gradient-1);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow:
+        0 4px 16px rgba(28, 99, 115, 0.3),
+        0 2px 8px rgba(28, 99, 115, 0.2);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 8px 24px rgba(28, 99, 115, 0.4),
+        0 4px 12px rgba(28, 99, 115, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--sol-forest);
+      padding: 0.75rem 1.5rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border: 2px solid rgba(28, 99, 115, 0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      border-color: var(--sol-forest);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(28, 99, 115, 0.15);
+    }
+
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--sol-gradient-2);
+      color: white;
+      box-shadow: 0 4px 12px rgba(42, 138, 158, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .airroi-pill{
+      display: inline-flex;
+      align-items: center;
+      padding: 0.4rem 0.8rem;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, rgba(200,177,138,0.15) 0%, rgba(200,177,138,0.25) 100%);
+      color: #8a7548;
+      border: 1.5px solid rgba(200,177,138,0.4);
+      box-shadow: 0 2px 8px rgba(200,177,138,0.2);
+    }
+
+    .metric-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .metric{
+      background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+      border: 1px solid rgba(28,99,115,0.12);
+      border-radius: 1rem;
+      padding: 1rem;
+      line-height: 1.2;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--sol-gradient-1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .metric:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(28, 99, 115, 0.12);
+      border-color: rgba(42, 138, 158, 0.3);
+    }
+
+    .metric:hover::before {
+      opacity: 1;
+    }
+
+    .metric .k{
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--sol-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .metric .v{
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 900;
+      background: var(--sol-gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      /* Same clipping guard as .gradient-text — these are all currency figures,
+         and a sheared "$" or "5" is the most visible possible defect. */
+      display: inline-block;
+      line-height: 1.35;
+      padding-bottom: 0.1em;
+    }
+
+    .chart-container{
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin-inline: auto;
+      height: 380px;
+      max-height: 480px;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @media (min-width: 768px){
+      .chart-container{ height: 420px; }
+    }
+
+    input[type=range]{
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, var(--sol-sage), var(--sol-forest));
+      outline: none;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    input[type=range]:hover{
+      opacity: 1;
+    }
+
+    input[type=range]::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      background: white;
+      cursor: pointer;
+      border: 3px solid var(--sol-forest);
+      box-shadow:
+        0 4px 12px rgba(28,99,115,0.3),
+        0 2px 6px rgba(28,99,115,0.2);
+      transition: all 0.2s ease;
+    }
+
+    input[type=range]::-webkit-slider-thumb:hover{
+      transform: scale(1.1);
+      box-shadow:
+        0 6px 16px rgba(28,99,115,0.4),
+        0 3px 8px rgba(28,99,115,0.3);
+    }
+
+    input[type=range]::-moz-range-thumb{
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      background: white;
+      cursor: pointer;
+      border: 3px solid var(--sol-forest);
+      box-shadow:
+        0 4px 12px rgba(28,99,115,0.3),
+        0 2px 6px rgba(28,99,115,0.2);
+      transition: all 0.2s ease;
+    }
+
+    input[type=range]::-moz-range-thumb:hover{
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .info-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(236,231,223,0.5) 100%);
+      border: 1px solid rgba(28,99,115,0.1);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 8px 24px rgba(28,99,115,0.1);
+      transform: translateY(-2px);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(42,138,158,0.08) 0%, rgba(42,138,158,0.12) 100%);
+      border-left: 4px solid var(--sol-sage);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      box-shadow: 0 4px 12px rgba(42,138,158,0.08);
+    }
+
+    .feature-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      background: rgba(42, 138, 158, 0.1);
+      color: var(--sol-forest);
+      border: 1px solid rgba(42, 138, 158, 0.2);
+    }
+
+    .subject-card {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 24px 56px rgba(28, 99, 115, 0.2),
+        0 10px 24px rgba(28, 99, 115, 0.1);
+    }
+
+    .subject-card .subject-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 320px;
+    }
+
+    .subject-card .subject-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .subject-card:hover .subject-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .subject-card .subject-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(255,255,255,1) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .subject-card-body {
+      padding: 1.5rem 1.75rem 1.75rem;
+      background: white;
+    }
+
+    .subject-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--sol-forest);
+      letter-spacing: -0.01em;
+    }
+
+    .subject-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--sol-ink);
+    }
+
+    .subject-rating .star {
+      color: #c8b18a;
+      font-size: 1.1rem;
+    }
+
+    .subject-reviews {
+      color: var(--sol-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .superhost-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--sol-forest) 0%, var(--sol-sage) 100%);
+      color: white;
+      box-shadow: 0 2px 8px rgba(28, 99, 115, 0.25);
+    }
+
+    .subject-config {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(28, 99, 115, 0.08);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--sol-ink);
+    }
+
+    .subject-config .sep {
+      color: rgba(28, 99, 115, 0.25);
+    }
+
+    .subject-market {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--sol-sage);
+      margin-top: 0.5rem;
+    }
+
+    .subject-card-link {
+      display: block;
+      width: calc(100% - 1.5rem);
+      margin: 0 auto 0.75rem;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.85rem 1rem;
+      border-radius: 1rem;
+      color: white;
+      background: var(--sol-gradient-1);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subject-card-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: left 0.5s;
+    }
+
+    .subject-card-link:hover::before {
+      left: 100%;
+    }
+
+    .subject-card-link:hover {
+      opacity: 0.95;
+    }
+
+    .re-type-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.85rem;
+      border-radius: 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, rgba(28,99,115,0.08) 0%, rgba(42,138,158,0.14) 100%);
+      color: var(--sol-forest);
+      border: 1px solid rgba(42,138,158,0.2);
+    }
+
+    .comp-card {
+      flex-direction: column;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .comp-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(28, 99, 115, 0.15);
+    }
+
+    .image-overlay {
+      position: relative;
+      overflow: hidden;
+      height: 240px;
+    }
+
+    .image-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .comp-card:hover .image-overlay img {
+      transform: scale(1.05);
+    }
+
+    .accent-line {
+      height: 3px;
+      background: var(--sol-gradient-1);
+      margin-top: 1rem;
+    }
+
+    .luxury-header {
+      background: linear-gradient(135deg, rgba(28,99,115,0.02) 0%, rgba(42,138,158,0.02) 100%);
+    }
+
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media print {
+      body { background: white; }
+      .no-print { display: none; }
+      .glass-card { background: white; border: 1px solid #e5e7eb; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <div class="container mx-auto max-w-7xl px-4 py-8">
+
+    <!-- 1) Branded Header -->
+    <header class="mb-10 rounded-3xl glass-card shadow-luxury overflow-hidden fade-in-up">
+      <div class="luxury-header px-8 py-8 flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+        <div class="flex items-start gap-6">
+          <img
+            src="data:image/png;base64,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"
+            alt="Halara Hosting Logo"
+            class="h-24 md:h-28 w-auto"
+          />
+
+          <div class="pt-2">
+            <div class="text-xs font-extrabold tracking-[.3em] uppercase" style="color:var(--sol-sage); letter-spacing: 0.25em;">
+              Halara Hosting · Property Income Analysis
+            </div>
+            <h1 class="section-title text-4xl md:text-5xl mt-2 gradient-text">
+              2145 Beach Front Drive, Sevierville TN
+            </h1>
+            <p class="text-base md:text-lg font-semibold mt-3" style="color:var(--sol-muted);">
+              Subject: 3 Bed / 3 Bath New-Construction Indoor-Pool Cabin · STR Underwriting &amp; Comp Benchmarking
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 no-print md:pt-2">
+          <button
+            onclick="window.print()"
+            class="btn-primary"
+          >
+            📄 Print / Save PDF
+          </button>
+          <a
+            href="https://www.halarahosting.com"
+            target="_blank"
+            class="btn-secondary"
+          >
+            🌐 halarahosting.com
+          </a>
+        </div>
+      </div>
+      <div class="accent-line"></div>
+    </header>
+
+    <!-- 2) Subject Property Details -->
+    <section class="glass-card rounded-3xl shadow-luxury p-8 mb-10 fade-in-up delay-1">
+      <div class="flex items-start justify-between gap-4 mb-6">
+        <div>
+          <span class="pill mb-4">📍 Subject Property Details</span>
+          <h2 class="section-title text-3xl mb-3" style="color:var(--sol-forest);">Listing &amp; Positioning</h2>
+          <p class="text-base leading-relaxed" style="color:#57534e;">
+            At a projected $127,410 in annual revenue, this new-construction 3-bedroom indoor-pool cabin ranks #5 of 12 in its comp set — outperforming 7 comparable properties while sitting $12,870 below the top comp. Its private indoor pool is a high-demand differentiator in the Gatlinburg / Pigeon Forge market, and its $465 ADR positions it above the majority of the comp set while leaving meaningful rate headroom relative to the four higher-earning comps. As a new build with no review history yet, accelerating early bookings and accumulating ratings quickly is the most direct path to closing that revenue gap.
+          </p>
+        </div>
+        
+      </div>
+
+      <div class="mt-6 grid lg:grid-cols-5 gap-8">
+        <div class="lg:col-span-2 subject-card shadow-soft glass-card">
+          <div class="subject-img-wrap">
+            <img
+              src="https://photos.zillowstatic.com/fp/39d54140065a987ac2aaa3c0f78ee2d8-cc_ft_960.jpg"
+              alt="2145 Beach Front Drive, Sevierville TN hero image"
+              onerror="this.onerror=null; this.src='https://placehold.co/1200x800/f7f3ee/1f3c34?text=Subject+Image';"
+            />
+          </div>
+
+          
+          
+          <div class="subject-card-body">
+            <div style="margin-bottom: 0.75rem;">
+              <span class="re-type-pill">New-Construction Indoor-Pool Cabin</span>
+            </div>
+
+            <div class="subject-card-title">
+              2145 Beach Front Drive, Sevierville, TN 37876
+            </div>
+
+            <div class="subject-config">
+              <span>3 Bedrooms</span>
+              <span class="sep">&middot;</span>
+              <span>3 Baths</span>
+              
+            </div>
+
+            <div class="subject-market">
+              Gatlinburg / Pigeon Forge
+            </div>
+          </div>
+          
+          
+        </div>
+
+        <div class="lg:col-span-3">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="info-card">
+              <div class="text-xs font-bold uppercase tracking-wider" style="color:var(--sol-muted);">Assumed Configuration</div>
+              <div class="text-lg font-extrabold mt-2" style="color:#292524;">New-Construction Indoor-Pool Cabin · 3 Bed / 3 Bath</div>
+              <div class="text-sm mt-3 leading-relaxed" style="color:#57534e;">
+                The three-bedroom, three-bath layout ensures every sleeping suite has dedicated bath access — a practical advantage that reduces friction for multi-couple and multi-family groups and supports the property's 10-guest capacity without compromising privacy.
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="text-xs font-bold uppercase tracking-wider" style="color:var(--sol-muted);">Max Guests</div>
+              <div class="text-lg font-extrabold mt-2" style="color:#292524;">10</div>
+              <div class="text-sm mt-3 leading-relaxed" style="color:#57534e;">
+                A 10-guest capacity aligns well with the majority of the comp set and positions the property to capture the large-group booking segment that drives the highest nightly rates in this market without exceeding configurations common among well-performing 3-bedroom comps.
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 highlight-box">
+            <div class="text-base font-extrabold mb-2" style="color:var(--sol-forest);">✨ Amenity Upside (Off-Season Booking Lift)</div>
+            <div class="text-sm leading-relaxed" style="color:#57534e;">
+              The property's private indoor pool already commands attention year-round, but targeted amenity additions could meaningfully lift occupancy during the softest months — January, February, April, May, and September — when demand in this market softens. Adding a game room with arcade units, an air hockey table, or a golf simulator would broaden appeal for groups traveling outside peak periods who want on-site entertainment regardless of weather. A sauna or cold plunge package would align with the wellness travel trend gaining traction among multi-couple and adult group bookings. Fire pit seating with outdoor string lighting adds a low-cost experiential layer that resonates strongly in this market and photographs well for listing differentiation. Each of these upgrades works synergistically with the existing indoor pool and hot tub to present the property as a full-amenity destination rather than a seasonal stop.
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              
+              <span class="feature-badge">🎮 Game Room → Golf Simulator</span>
+              
+              <span class="feature-badge">🧖 Sauna + Cold Plunge</span>
+              
+              <span class="feature-badge">🔥 Fire Pit Experience</span>
+              
+              <span class="feature-badge">📈 Off-Season Conversion</span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Market Positioning -->
+    <section class="glass-card rounded-3xl shadow-luxury p-8 mb-10 fade-in-up delay-2">
+      <span class="pill mb-4">📊 Market Positioning</span>
+      <h2 class="section-title text-3xl mb-4" style="color:var(--sol-forest);">Competitive Landscape &amp; Positioning Strategy</h2>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-6">
+        
+        <div class="info-card">
+          <div class="text-2xl mb-2">🏔️</div>
+          <div class="text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--sol-muted);">Market Positioning</div>
+          <div class="text-sm leading-relaxed" style="color:#57534e;">
+            Situated in the Gatlinburg submarket of Sevierville — one of the most consistently high-demand short-term rental corridors in Tennessee — this property benefits from year-round visitor traffic driven by diverse seasonal draws. Its new-construction status means no deferred maintenance, strong curb appeal, and listing photos that reflect a product guests actually receive.
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="text-2xl mb-2">⭐</div>
+          <div class="text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--sol-muted);">Amenity Quality</div>
+          <div class="text-sm leading-relaxed" style="color:#57534e;">
+            The private indoor pool is the property's most bankable feature — it converts fence-sitters during shoulder and soft months when outdoor amenities lose appeal, and it justifies a $465 ADR that outpaces seven of the eleven comps. Paired with a hot tub, full kitchen, and in-unit laundry, the cabin delivers the self-contained experience that large groups specifically seek when comparing options.
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="text-2xl mb-2">💰</div>
+          <div class="text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--sol-muted);">Revenue Potential</div>
+          <div class="text-sm leading-relaxed" style="color:#57534e;">
+            The projected $127,410 annual revenue at 75% occupancy reflects a realistic baseline for a new listing still building its review profile. The four comps that currently outperform this property — ranging from $132,495 to $140,280 — demonstrate that the ceiling in this comp set is achievable with strong ratings and optimized pricing, and a top-decile scenario puts upside at $133,780.
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- 4) Revenue Calculator -->
+    <section class="glass-card rounded-3xl shadow-luxury p-8 mb-10 fade-in-up delay-3">
+      <span class="pill mb-4">💰 Revenue Projections</span>
+      <h2 class="section-title text-3xl mb-6" style="color:var(--sol-forest);">Interactive Performance Model</h2>
+
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-10">
+        
+        <div class="rounded-2xl p-6 info-card"
+             style="">
+          <div class="text-xs font-extrabold uppercase tracking-widest mb-1"
+               style="color:var(--sol-muted);">
+            Year One — Launch Ramp
+          </div>
+          
+          <div class="text-xs mb-4" style="color:var(--sol-muted);">Building review history and booking velocity</div>
+          
+          <div class="section-title text-4xl stat-number gradient-text"
+               style="">
+            $107,900
+          </div>
+          <div class="text-sm font-semibold mt-2"
+               style="color:#57534e;">
+            Range $95,000 – $115,000
+          </div>
+          <div class="text-xs mt-4 pt-4"
+               style="border-top:1px solid rgba(28,99,115,.12);
+                      color:var(--sol-muted);">
+            $444 ADR · 66% occupancy
+          </div>
+          
+          <div class="text-xs mt-3 leading-relaxed"
+               style="color:#57534e;">Matches the baseline projection commissioned on this address. A new listing earns its occupancy through reviews, and the indoor-pool cabins below show exactly what that first year looks like.</div>
+          
+        </div>
+        
+        <div class="rounded-2xl p-6 shadow-luxury"
+             style="background:var(--sol-gradient-1);color:#fff;border:1px solid rgba(255,255,255,.25);">
+          <div class="text-xs font-extrabold uppercase tracking-widest mb-1"
+               style="color:rgba(255,255,255,.85);">
+            Stabilized — Year Two Forward
+          </div>
+          
+          <div class="text-xs mb-4" style="color:rgba(255,255,255,.7);">Full review history, established booking velocity</div>
+          
+          <div class="section-title text-4xl stat-number "
+               style="color:#fff;line-height:1.35;">
+            $127,410
+          </div>
+          <div class="text-sm font-semibold mt-2"
+               style="color:rgba(255,255,255,.9);">
+            Range $118,000 – $138,000
+          </div>
+          <div class="text-xs mt-4 pt-4"
+               style="border-top:1px solid rgba(255,255,255,.25);
+                      color:rgba(255,255,255,.85);">
+            $465 ADR · 75% occupancy
+          </div>
+          
+          <div class="text-xs mt-3 leading-relaxed"
+               style="color:rgba(255,255,255,.8);">Anchored on the six stabilized 3-bedroom cabins below, which run a $132,495 median within a mile of the subject. The midpoint sits below that median, and below the $112,993 median of all 22 mature 3BR cabins in this radius already holding 75% occupancy.</div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="highlight-box mb-10">
+        <div class="text-sm leading-relaxed" style="color:#57534e;"><strong>Year One to stabilized: +$19,510 per year</strong> (18% above the launch-year midpoint). A 5-mile search returned 139 three-bedroom listings, 14 of them with a genuine pool and only 8 with an indoor pool. Of those eight, exactly <strong>one</strong> has a full operating history — and it earned <strong>$140,280</strong> over the past twelve months. The other seven all opened within the past year and sit at 12–40% occupancy while they accumulate reviews. That is the single most important finding in this report: a blended market projection averages those seven launch-stage cabins against everyone else, which pulls the headline number down and understates what this property earns once it is established. For context, Halara Hosting's own 2081 Kerr Road in Sevierville produced <strong>$139K gross in 2025</strong>. It sits 11.7 miles north of this address, so it is a management benchmark rather than a neighborhood comparable — but it brackets the upper end of the stabilized range.</div>
+      </div>
+      
+      
+
+      <!-- Interactive Controls -->
+      <div class="grid md:grid-cols-3 gap-8 mt-8">
+        <!-- Occupancy Slider -->
+        <div class="glass-card-dark rounded-2xl p-6">
+          <label class="block text-sm font-bold uppercase tracking-wider mb-3" style="color:var(--sol-forest);">
+            Annual Occupancy Rate
+          </label>
+          <div class="flex items-center gap-4 mb-3">
+            <input
+              type="range"
+              id="occSlider"
+              min="40"
+              max="90"
+              value="75"
+              step="1"
+              class="flex-grow"
+            />
+            <div class="stat-number text-3xl font-bold" style="color:var(--sol-forest); min-width: 80px;">
+              <span id="occValue">75</span>%
+            </div>
+          </div>
+          <div class="text-xs" style="color:var(--sol-muted);">
+            Industry range: 40–90%
+          </div>
+        </div>
+
+        <!-- ADR Slider -->
+        <div class="glass-card-dark rounded-2xl p-6">
+          <label class="block text-sm font-bold uppercase tracking-wider mb-3" style="color:var(--sol-forest);">
+            Average Daily Rate (ADR)
+          </label>
+          <div class="flex items-center gap-4 mb-3">
+            <input
+              type="range"
+              id="adrSlider"
+              min="300"
+              max="700"
+              value="465"
+              step="5"
+              class="flex-grow"
+            />
+            <div class="stat-number text-3xl font-bold" style="color:var(--sol-forest); min-width: 140px;">
+              $<span id="adrValue">465</span>
+            </div>
+          </div>
+          <div class="text-xs" style="color:var(--sol-muted);">
+            Comp range: $300 – $700
+          </div>
+        </div>
+
+        <!-- Days Available Slider -->
+        <div class="glass-card-dark rounded-2xl p-6">
+          <label class="block text-sm font-bold uppercase tracking-wider mb-3" style="color:var(--sol-forest);">
+            Days Available (Out of 365)
+          </label>
+          <div class="flex items-center gap-4 mb-3">
+            <input
+              type="range"
+              id="daysSlider"
+              min="300"
+              max="365"
+              value="365"
+              step="5"
+              class="flex-grow"
+            />
+            <div class="stat-number text-3xl font-bold" style="color:var(--sol-forest); min-width: 100px;">
+              <span id="daysValue">365</span>
+            </div>
+          </div>
+          <div class="text-xs" style="color:var(--sol-muted);">
+            Account for maintenance, cleaning, and personal use
+          </div>
+        </div>
+      </div>
+
+      <!-- Revenue Display -->
+      <div class="mt-8 p-8 rounded-2xl text-center" style="background: var(--sol-gradient-3);">
+        <div class="text-sm font-bold uppercase tracking-[.2em] text-white/80 mb-2">
+          Projected Annual Gross Revenue
+        </div>
+        <div class="stat-number text-6xl md:text-7xl font-black text-white mb-2">
+          $<span id="totalRevenue">127,410</span>
+        </div>
+        <div class="text-sm text-white/70">
+          Based on <span id="displayOcc">75</span>% occupancy of <span id="displayDays">365</span> available days at $<span id="displayAdr">465</span> ADR
+        </div>
+        <div class="mt-6 text-xs text-white/60 max-w-2xl mx-auto leading-relaxed">
+          *Gross revenue before cleaning, platform fees, utilities, HOA/strata, taxes, supplies, and management.
+          Actual performance may vary based on seasonality, market conditions, and operational execution.
+        </div>
+      </div>
+
+      <!-- Key Metrics Grid -->
+      <div class="metric-grid mt-8">
+        <div class="metric">
+          <div class="k">📅 Available Nights</div>
+          <div class="v"><span id="availNights">365</span></div>
+        </div>
+        <div class="metric">
+          <div class="k">🛏️ Occupied Nights</div>
+          <div class="v"><span id="occNights">274</span></div>
+        </div>
+        <div class="metric">
+          <div class="k">💵 Revenue per Night</div>
+          <div class="v">$<span id="revPerNight">465</span></div>
+        </div>
+        <div class="metric">
+          <div class="k">📊 Revenue per Available Night</div>
+          <div class="v">$<span id="revPar">349</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) Chart Section -->
+    <section class="glass-card rounded-3xl shadow-luxury p-8 mb-10 fade-in-up delay-4">
+      <span class="pill mb-4">📈 Performance Analytics</span>
+      <h2 class="section-title text-3xl mb-6" style="color:var(--sol-forest);">Seasonal Performance Patterns</h2>
+
+      <div class="chart-container">
+        <canvas id="seasonalChart"></canvas>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="highlight-box">
+          <div class="text-sm font-bold mb-2" style="color:var(--sol-forest);">☀️ Peak Season (Jun–Jul, Oct, Dec)</div>
+          <div class="text-sm leading-relaxed" style="color:#57534e;">
+            June and July bring consistent family travel demand as groups plan extended summer vacations, while October's fall foliage surge is one of the most reliable occupancy drivers in the Gatlinburg / Pigeon Forge market — making it a critical pricing window. December adds a holiday travel spike that, combined with the indoor pool's all-weather appeal, supports strong rate and occupancy performance even as temperatures drop.
+          </div>
+        </div>
+        <div class="highlight-box">
+          <div class="text-sm font-bold mb-2" style="color:var(--sol-forest);">🌸 Shoulder Season (Mar, Aug, Nov)</div>
+          <div class="text-sm leading-relaxed" style="color:#57534e;">
+            March, August, and November represent meaningful revenue opportunities where strategic pricing and amenity emphasis can maintain occupancy above the market average — the indoor pool is a particularly effective conversion tool for guests who wouldn't book an outdoor-pool property during these months. The softest stretch — January, February, April, May, and September — calls for targeted short-stay promotions, weekday discounts, and highlighted in-cabin entertainment options to keep occupancy competitive rather than leaving nights unbooked at any rate.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) Comparable Properties -->
+    <section class="glass-card rounded-3xl shadow-luxury p-8 mb-10 break-after fade-in-up delay-4">
+      <div class="flex items-start justify-between gap-4 mb-6">
+        <div>
+          <span class="pill mb-4">🏘️ Market Comparables</span>
+          <h2 class="section-title text-3xl mb-3" style="color:var(--sol-forest);">
+            Stabilized 3-Bedroom Cabins — Within 1 Mile
+          </h2>
+          <p class="text-sm leading-relaxed" style="color:#57534e;">
+            
+            Every cabin here is a 3-bedroom within roughly a mile of the subject carrying 25 or more reviews — a full operating year behind it. This is the band the subject competes in once it is established.
+            
+          </p>
+        </div>
+        <span class="airroi-pill">✓ AirROI Verified</span>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 print:grid-cols-2 gap-8 mt-8">
+        
+        <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+          <div class="image-overlay">
+            <img
+              src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1509758355489562691/original/3b969cba-00b8-429e-a8e9-f446f917d4d9.jpeg"
+              alt="The Summit — Luxury Pool Cabin, Modern Elegance"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+            />
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <h4 class="text-base font-extrabold" style="color:#292524;">The Summit — Luxury Pool Cabin, Modern Elegance</h4>
+              <span class="airroi-pill">AirROI</span>
+            </div>
+            <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 12 · 3 BR / 3 BA · ⭐ 4.87 (47)</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              
+              <span class="feature-badge">🏊 Private Indoor Pool</span>
+              
+              <span class="feature-badge">💰 Highest ADR in Set</span>
+              
+              <span class="feature-badge">🏆 Top Revenue</span>
+              
+            </div>
+            <div class="metric-grid">
+              <div class="metric"><div class="k">Revenue Potential</div><div class="v">$156.1K</div></div>
+              <div class="metric"><div class="k">Annual Revenue</div><div class="v">$140.3K</div></div>
+              <div class="metric"><div class="k">Occupancy</div><div class="v">58%</div></div>
+              <div class="metric"><div class="k">ADR</div><div class="v">$658</div></div>
+              <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+            </div>
+          </div>
+          
+          <a href="https://www.airbnb.com/rooms/1509758355489562691" target="_blank"
+             class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+             style="background:var(--sol-gradient-1);">View Listing →</a>
+          
+        </div>
+        
+        <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+          <div class="image-overlay">
+            <img
+              src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-517855985972745123/original/2a427e90-ec96-4170-b287-eda943149912.jpeg"
+              alt="Gorgeous 3BD Lodge — Hot Tub, Fire Pit, Game Cave"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+            />
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <h4 class="text-base font-extrabold" style="color:#292524;">Gorgeous 3BD Lodge — Hot Tub, Fire Pit, Game Cave</h4>
+              <span class="airroi-pill">AirROI</span>
+            </div>
+            <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 9 · 3 BR / 2 BA · ⭐ 4.95 (235)</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              
+              <span class="feature-badge">📈 92% Occupancy</span>
+              
+              <span class="feature-badge">⭐ 235 Reviews</span>
+              
+              <span class="feature-badge">📍 0.2 Miles Away</span>
+              
+            </div>
+            <div class="metric-grid">
+              <div class="metric"><div class="k">Revenue Potential</div><div class="v">$143.1K</div></div>
+              <div class="metric"><div class="k">Annual Revenue</div><div class="v">$136.3K</div></div>
+              <div class="metric"><div class="k">Occupancy</div><div class="v">92%</div></div>
+              <div class="metric"><div class="k">ADR</div><div class="v">$405</div></div>
+              <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+            </div>
+          </div>
+          
+          <a href="https://www.airbnb.com/rooms/517855985972745123" target="_blank"
+             class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+             style="background:var(--sol-gradient-1);">View Listing →</a>
+          
+        </div>
+        
+        <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+          <div class="image-overlay">
+            <img
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-635510051532343925/original/bc449b61-7aad-424f-a53b-df23852dc349.png"
+              alt="Private Mountain Spa Retreat — Sauna, Hot Tub, Fire Pit"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+            />
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <h4 class="text-base font-extrabold" style="color:#292524;">Private Mountain Spa Retreat — Sauna, Hot Tub, Fire Pit</h4>
+              <span class="airroi-pill">AirROI</span>
+            </div>
+            <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 12 · 3 BR / 2 BA · ⭐ 4.99 (278)</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              
+              <span class="feature-badge">⭐ 4.99 Rating</span>
+              
+              <span class="feature-badge">🧖 Spa Amenities</span>
+              
+              <span class="feature-badge">👥 Sleeps 12</span>
+              
+            </div>
+            <div class="metric-grid">
+              <div class="metric"><div class="k">Revenue Potential</div><div class="v">$142.1K</div></div>
+              <div class="metric"><div class="k">Annual Revenue</div><div class="v">$135.3K</div></div>
+              <div class="metric"><div class="k">Occupancy</div><div class="v">82%</div></div>
+              <div class="metric"><div class="k">ADR</div><div class="v">$447</div></div>
+              <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+            </div>
+          </div>
+          
+          <a href="https://www.airbnb.com/rooms/635510051532343925" target="_blank"
+             class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+             style="background:var(--sol-gradient-1);">View Listing →</a>
+          
+        </div>
+        
+        <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+          <div class="image-overlay">
+            <img
+              src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1283556913893082222/original/a6bbae05-387e-4354-8899-2d8385bcf381.jpeg"
+              alt="3 Miles to Downtown — Mountain-View Pool Cabin"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+            />
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <h4 class="text-base font-extrabold" style="color:#292524;">3 Miles to Downtown — Mountain-View Pool Cabin</h4>
+              <span class="airroi-pill">AirROI</span>
+            </div>
+            <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 8 · 3 BR / 2 BA · ⭐ 4.85 (55)</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              
+              <span class="feature-badge">🏊 Pool</span>
+              
+              <span class="feature-badge">📈 84% Occupancy</span>
+              
+              <span class="feature-badge">🌄 Mountain Views</span>
+              
+            </div>
+            <div class="metric-grid">
+              <div class="metric"><div class="k">Revenue Potential</div><div class="v">$139.1K</div></div>
+              <div class="metric"><div class="k">Annual Revenue</div><div class="v">$132.5K</div></div>
+              <div class="metric"><div class="k">Occupancy</div><div class="v">83%</div></div>
+              <div class="metric"><div class="k">ADR</div><div class="v">$434</div></div>
+              <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+            </div>
+          </div>
+          
+          <a href="https://www.airbnb.com/rooms/1283556913893082222" target="_blank"
+             class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+             style="background:var(--sol-gradient-1);">View Listing →</a>
+          
+        </div>
+        
+        <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+          <div class="image-overlay">
+            <img
+              src="https://a0.muscache.com/im/pictures/f75286eb-d17d-4496-968f-fd24752275bd.jpg"
+              alt="Smoky Mountain Cabin — Prime Location & Amazing Views"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+            />
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <h4 class="text-base font-extrabold" style="color:#292524;">Smoky Mountain Cabin — Prime Location & Amazing Views</h4>
+              <span class="airroi-pill">AirROI</span>
+            </div>
+            <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 12 · 3 BR / 3.5 BA · ⭐ 4.92 (288)</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              
+              <span class="feature-badge">⭐ 288 Reviews</span>
+              
+              <span class="feature-badge">📈 83% Occupancy</span>
+              
+              <span class="feature-badge">👥 Sleeps 12</span>
+              
+            </div>
+            <div class="metric-grid">
+              <div class="metric"><div class="k">Revenue Potential</div><div class="v">$131.5K</div></div>
+              <div class="metric"><div class="k">Annual Revenue</div><div class="v">$125.2K</div></div>
+              <div class="metric"><div class="k">Occupancy</div><div class="v">82%</div></div>
+              <div class="metric"><div class="k">ADR</div><div class="v">$416</div></div>
+              <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+            </div>
+          </div>
+          
+          <a href="https://www.airbnb.com/rooms/51303949" target="_blank"
+             class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+             style="background:var(--sol-gradient-1);">View Listing →</a>
+          
+        </div>
+        
+        <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+          <div class="image-overlay">
+            <img
+              src="https://a0.muscache.com/im/pictures/miso/Hosting-805162338427126832/original/ca65d527-c608-4ac2-ae57-554a94f48d46.png"
+              alt="Upscale Cabin with Views — Hot Tub, Pet Friendly"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+            />
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <h4 class="text-base font-extrabold" style="color:#292524;">Upscale Cabin with Views — Hot Tub, Pet Friendly</h4>
+              <span class="airroi-pill">AirROI</span>
+            </div>
+            <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 8 · 3 BR / 2.5 BA · ⭐ 4.79 (151)</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              
+              <span class="feature-badge">🏊 Pool</span>
+              
+              <span class="feature-badge">⭐ 151 Reviews</span>
+              
+              <span class="feature-badge">🐾 Pet Friendly</span>
+              
+            </div>
+            <div class="metric-grid">
+              <div class="metric"><div class="k">Revenue Potential</div><div class="v">$119.2K</div></div>
+              <div class="metric"><div class="k">Annual Revenue</div><div class="v">$113.5K</div></div>
+              <div class="metric"><div class="k">Occupancy</div><div class="v">73%</div></div>
+              <div class="metric"><div class="k">ADR</div><div class="v">$421</div></div>
+              <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+            </div>
+          </div>
+          
+          <a href="https://www.airbnb.com/rooms/805162338427126832" target="_blank"
+             class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+             style="background:var(--sol-gradient-1);">View Listing →</a>
+          
+        </div>
+        
+      </div>
+
+      
+      <div class="mt-12 pt-10" style="border-top:2px solid rgba(42,138,158,0.25);">
+        <span class="pill mb-4">🆕 Launch-Stage Supply</span>
+        <h3 class="section-title text-2xl mb-3" style="color:var(--sol-forest);">
+          Every Indoor-Pool 3-Bedroom in the 5-Mile Radius — Launch Stage
+        </h3>
+        
+        <p class="text-sm leading-relaxed mb-2" style="color:#57534e;">These are the cabins the subject competes with directly on amenity. Every one of them opened within the past year, and their trailing revenue reflects months of operation rather than a full year — note the ADRs, which are strong, against occupancy still in the teens and thirties. They are shown here not as a revenue target but as evidence of what the launch ramp looks like, and of how thin the established indoor-pool supply in this market still is.</p>
+        
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 print:grid-cols-2 gap-8 mt-8">
+          
+          <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+            <div class="image-overlay">
+              <img
+                src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-993507828335713759/original/95008a33-51b3-4fa9-acaf-aac0b1cc9ed2.jpeg"
+                alt="Luxurious Smoky Mountain Retreat — Pool & Arcade"
+                class="w-full h-48 object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+              />
+            </div>
+            <div class="p-5 flex-grow">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h4 class="text-base font-extrabold" style="color:#292524;">Luxurious Smoky Mountain Retreat — Pool & Arcade</h4>
+                <span class="airroi-pill">AirROI</span>
+              </div>
+              <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 10 · 3 BR / 3.5 BA · 2 reviews</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                
+                <span class="feature-badge">🏊 Indoor Pool</span>
+                
+                <span class="feature-badge">🆕 2 Reviews — New</span>
+                
+                <span class="feature-badge">💰 $902 ADR</span>
+                
+              </div>
+              <div class="metric-grid">
+                <div class="metric"><div class="k">Revenue Potential</div><div class="v">$156.1K</div></div>
+                <div class="metric"><div class="k">Annual Revenue</div><div class="v">$105.6K</div></div>
+                <div class="metric"><div class="k">Occupancy</div><div class="v">32%</div></div>
+                <div class="metric"><div class="k">ADR</div><div class="v">$902</div></div>
+                <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+              </div>
+            </div>
+            
+            <a href="https://www.airbnb.com/rooms/993507828335713759" target="_blank"
+               class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+               style="background:var(--sol-gradient-1);">View Listing →</a>
+            
+          </div>
+          
+          <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+            <div class="image-overlay">
+              <img
+                src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1541414072704304753/original/7a8030bf-0fb3-46cb-b8b8-4a251489ac5d.jpeg"
+                alt="Incredible Views — Themed Rooms, Private Pool"
+                class="w-full h-48 object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+              />
+            </div>
+            <div class="p-5 flex-grow">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h4 class="text-base font-extrabold" style="color:#292524;">Incredible Views — Themed Rooms, Private Pool</h4>
+                <span class="airroi-pill">AirROI</span>
+              </div>
+              <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 12 · 3 BR / 3 BA · ⭐ 5.0 (4)</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                
+                <span class="feature-badge">🏊 Indoor Pool</span>
+                
+                <span class="feature-badge">🆕 4 Reviews — New</span>
+                
+                <span class="feature-badge">🎯 Themed Rooms</span>
+                
+              </div>
+              <div class="metric-grid">
+                <div class="metric"><div class="k">Revenue Potential</div><div class="v">$127.6K</div></div>
+                <div class="metric"><div class="k">Annual Revenue</div><div class="v">$73.9K</div></div>
+                <div class="metric"><div class="k">Occupancy</div><div class="v">37%</div></div>
+                <div class="metric"><div class="k">ADR</div><div class="v">$538</div></div>
+                <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+              </div>
+            </div>
+            
+            <a href="https://www.airbnb.com/rooms/1541414072704304753" target="_blank"
+               class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+               style="background:var(--sol-gradient-1);">View Listing →</a>
+            
+          </div>
+          
+          <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+            <div class="image-overlay">
+              <img
+                src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1556213017348097289/original/3eb0095f-ba30-4f25-804e-7fa441e79ee3.jpeg"
+                alt="Stay and Sway — Indoor Pool, Putt Putt & More"
+                class="w-full h-48 object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+              />
+            </div>
+            <div class="p-5 flex-grow">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h4 class="text-base font-extrabold" style="color:#292524;">Stay and Sway — Indoor Pool, Putt Putt & More</h4>
+                <span class="airroi-pill">AirROI</span>
+              </div>
+              <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 12 · 3 BR / 3 BA · ⭐ 4.86 (14)</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                
+                <span class="feature-badge">🏊 Indoor Pool</span>
+                
+                <span class="feature-badge">🆕 14 Reviews — New</span>
+                
+                <span class="feature-badge">⛳ Putt Putt</span>
+                
+              </div>
+              <div class="metric-grid">
+                <div class="metric"><div class="k">Revenue Potential</div><div class="v">$106.8K</div></div>
+                <div class="metric"><div class="k">Annual Revenue</div><div class="v">$65.4K</div></div>
+                <div class="metric"><div class="k">Occupancy</div><div class="v">39%</div></div>
+                <div class="metric"><div class="k">ADR</div><div class="v">$450</div></div>
+                <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+              </div>
+            </div>
+            
+            <a href="https://www.airbnb.com/rooms/1556213017348097289" target="_blank"
+               class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+               style="background:var(--sol-gradient-1);">View Listing →</a>
+            
+          </div>
+          
+          <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+            <div class="image-overlay">
+              <img
+                src="https://a0.muscache.com/im/pictures/hosting/Hosting-1294899421804885284/original/08f851fa-8c73-4699-9eb9-6135b1d8ffef.jpeg"
+                alt="Private Indoor Pool Cabin — Game Room, Fire Pit"
+                class="w-full h-48 object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+              />
+            </div>
+            <div class="p-5 flex-grow">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h4 class="text-base font-extrabold" style="color:#292524;">Private Indoor Pool Cabin — Game Room, Fire Pit</h4>
+                <span class="airroi-pill">AirROI</span>
+              </div>
+              <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 8 · 3 BR / 2.5 BA · 2 reviews</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                
+                <span class="feature-badge">🏊 Indoor Pool</span>
+                
+                <span class="feature-badge">🆕 2 Reviews — New</span>
+                
+                <span class="feature-badge">⏳ 16% Occupancy</span>
+                
+              </div>
+              <div class="metric-grid">
+                <div class="metric"><div class="k">Revenue Potential</div><div class="v">$126.2K</div></div>
+                <div class="metric"><div class="k">Annual Revenue</div><div class="v">$30.8K</div></div>
+                <div class="metric"><div class="k">Occupancy</div><div class="v">15%</div></div>
+                <div class="metric"><div class="k">ADR</div><div class="v">$532</div></div>
+                <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+              </div>
+            </div>
+            
+            <a href="https://www.airbnb.com/rooms/1294899421804885284" target="_blank"
+               class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+               style="background:var(--sol-gradient-1);">View Listing →</a>
+            
+          </div>
+          
+          <div class="comp-card avoid-break flex flex-col rounded-2xl overflow-hidden shadow-soft glass-card">
+            <div class="image-overlay">
+              <img
+                src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1153569958883245870/original/0c978059-a217-49a9-aa8a-5ba3197fd081.jpeg"
+                alt="Pigeon Forge — Private Pool, Stunning Views"
+                class="w-full h-48 object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/900x600/1c6373/ffffff?text=Comparable+Property';"
+              />
+            </div>
+            <div class="p-5 flex-grow">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h4 class="text-base font-extrabold" style="color:#292524;">Pigeon Forge — Private Pool, Stunning Views</h4>
+                <span class="airroi-pill">AirROI</span>
+              </div>
+              <p class="text-xs mb-3" style="color:var(--sol-muted);">Sleeps 12 · 3 BR / 3 BA · ⭐ 4.63 (8)</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                
+                <span class="feature-badge">🏊 Indoor Pool</span>
+                
+                <span class="feature-badge">🆕 8 Reviews — New</span>
+                
+                <span class="feature-badge">⏳ 12% Occupancy</span>
+                
+              </div>
+              <div class="metric-grid">
+                <div class="metric"><div class="k">Revenue Potential</div><div class="v">$98.0K</div></div>
+                <div class="metric"><div class="k">Annual Revenue</div><div class="v">$18.1K</div></div>
+                <div class="metric"><div class="k">Occupancy</div><div class="v">12%</div></div>
+                <div class="metric"><div class="k">ADR</div><div class="v">$413</div></div>
+                <div class="metric" style="grid-column: 1 / span 2;"><div class="k">Days Available</div><div class="v">365</div></div>
+              </div>
+            </div>
+            
+            <a href="https://www.airbnb.com/rooms/1153569958883245870" target="_blank"
+               class="block w-full text-center text-sm font-bold py-3 text-white transition-all hover:opacity-90"
+               style="background:var(--sol-gradient-1);">View Listing →</a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- 7) Methodology & Assumptions -->
+    <section class="glass-card rounded-3xl shadow-luxury p-8 mb-10 fade-in-up delay-4">
+      <span class="pill mb-4">📋 Methodology</span>
+      <h2 class="section-title text-3xl mb-6" style="color:var(--sol-forest);">Analysis Assumptions &amp; Methodology</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="info-card">
+          <div class="text-base font-bold mb-3" style="color:var(--sol-forest);">🎯 Comp Selection Criteria</div>
+          <ul class="text-sm space-y-2 leading-relaxed" style="color:#57534e;">
+            
+            <li>• Gatlinburg submarket, within a 5-mile radius of the subject</li>
+            
+            <li>• 3-bedroom cabins serving the same 8–14 guest travel parties</li>
+            
+            <li>• <strong>Group 1 — Stabilized:</strong> 25+ reviews, a full operating year behind them</li>
+            
+            <li>• <strong>Group 2 — Launch Ramp:</strong> every indoor-pool 3BR in the radius that opened within the past year</li>
+            
+            <li>• Pool status verified against listing copy, not amenity tags alone</li>
+            
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <div class="text-base font-bold mb-3" style="color:var(--sol-forest);">📊 Data Sources</div>
+          <ul class="text-sm space-y-2 leading-relaxed" style="color:#57534e;">
+            
+            <li>• <strong>Subject baseline projection:</strong> owner-supplied Rentalizer report — high confidence, submarket score 84/100</li>
+            
+            <li>• <strong>Comp financials:</strong> live trailing-twelve-month revenue, ADR and occupancy for each listing shown</li>
+            
+            <li>• <strong>Occupancy:</strong> derived as revenue ÷ (ADR × 365) so every figure displayed reconciles against the other two</li>
+            
+            <li>• <strong>Owner benchmark:</strong> 2081 Kerr Road, Sevierville — $139K gross in 2025 under Halara Hosting management</li>
+            
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <div class="text-base font-bold mb-3" style="color:var(--sol-forest);">⚠️ Key Assumptions</div>
+          <ul class="text-sm space-y-2 leading-relaxed" style="color:#57534e;">
+            
+            <li>• Year One reflects a genuine launch ramp: a new listing carries no review history and no booking velocity on day one</li>
+            
+            <li>• Stabilized assumes 75% occupancy — a level 22 mature 3-bedroom cabins inside this radius already hold today</li>
+            
+            <li>• Professional management with dynamic pricing and listing optimization</li>
+            
+            <li>• 2081 Kerr Road sits 11.7 miles north, outside this radius — it is an owner-reported benchmark, not one of the comparables above</li>
+            
+            <li>• Ranges reflect the observed spread across comparables, not a guaranteed outcome</li>
+            
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <div class="text-base font-bold mb-3" style="color:var(--sol-forest);">💡 Performance Drivers</div>
+          <ul class="text-sm space-y-2 leading-relaxed" style="color:#57534e;">
+            
+            <li>• <strong>Peak Season:</strong> Jun–Jul, Oct, Dec — summer family travel, fall foliage and the holiday corridor</li>
+            
+            <li>• <strong>Shoulder Season:</strong> Mar, Aug, Nov — spring break, early-season hiking and pre-holiday weekends</li>
+            
+            <li>• <strong>Off Season:</strong> Jan–Feb, Apr–May, Sep — a heated indoor pool is weather-independent, which is precisely where this property separates from the cabins it competes against</li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 highlight-box">
+        <div class="text-sm font-bold mb-2" style="color:var(--sol-forest);">⚖️ Important Disclaimer</div>
+        <div class="text-sm leading-relaxed" style="color:#57534e;">
+          This analysis provides estimated gross revenue projections based on comparable property performance and market data.
+          Actual results will vary based on operational execution, market conditions, seasonality, and property-specific factors.
+          Revenue estimates are <strong>before</strong> all operating expenses including cleaning fees, platform commissions,
+          utilities, property taxes, HOA/strata fees, maintenance, supplies, insurance, and management fees. Net operating income
+          will be substantially lower after accounting for these costs. This report is for informational purposes only and should
+          not be considered financial or investment advice.
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 mt-12 border-t border-gray-200">
+      <p class="text-xs text-gray-400 font-medium uppercase tracking-widest">
+        Halara Hosting · Owners Managing for Owners
+      </p>
+      <p class="text-xs text-gray-300 mt-2">
+        <a href="https://www.halarahosting.com" class="hover:text-sol-forest transition">halarahosting.com</a>
+        &middot;
+        <a href="mailto:info@halarahosting.com" class="hover:text-sol-forest transition">info@halarahosting.com</a>
+        &middot;
+        201-982-2103
+      </p>
+      <p class="text-xs text-gray-300 mt-1">
+        Report generated 2026-09-17
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Revenue Calculator with 3 Toggles
+    const occSlider = document.getElementById('occSlider');
+    const adrSlider = document.getElementById('adrSlider');
+    const daysSlider = document.getElementById('daysSlider');
+
+    const occValue = document.getElementById('occValue');
+    const adrValue = document.getElementById('adrValue');
+    const daysValue = document.getElementById('daysValue');
+
+    const totalRevenue = document.getElementById('totalRevenue');
+    const displayOcc = document.getElementById('displayOcc');
+    const displayAdr = document.getElementById('displayAdr');
+    const displayDays = document.getElementById('displayDays');
+    const availNights = document.getElementById('availNights');
+    const occNights = document.getElementById('occNights');
+    const revPerNight = document.getElementById('revPerNight');
+    const revPar = document.getElementById('revPar');
+
+    function updateCalculator() {
+      const occ = parseInt(occSlider.value);
+      const adr = parseInt(adrSlider.value);
+      const days = parseInt(daysSlider.value);
+
+      const booked = Math.round(days * (occ / 100));
+      const revenue = booked * adr;
+      const rpa = Math.round(revenue / days);
+
+      occValue.textContent = occ;
+      adrValue.textContent = adr.toLocaleString();
+      daysValue.textContent = days;
+
+      totalRevenue.textContent = revenue.toLocaleString();
+      displayOcc.textContent = occ;
+      displayAdr.textContent = adr.toLocaleString();
+      displayDays.textContent = days;
+      availNights.textContent = days;
+      occNights.textContent = booked;
+      revPerNight.textContent = adr.toLocaleString();
+      revPar.textContent = rpa.toLocaleString();
+    }
+
+    [occSlider, adrSlider, daysSlider].forEach(s => s.addEventListener('input', updateCalculator));
+    updateCalculator();
+
+    // Chart
+    const ctx = document.getElementById('seasonalChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+          label: 'Occupancy %',
+          data: [61.0, 54.3, 79.2, 65.6, 65.3, 88.2, 95.3, 69.7, 62.1, 84.6, 79.4, 96.4],
+          borderColor: '#1f3c34',
+          backgroundColor: 'rgba(28, 99, 115, 0.08)',
+          borderWidth: 3,
+          fill: true,
+          tension: 0.4,
+          pointRadius: 5,
+          pointBackgroundColor: '#1f3c34',
+          pointBorderColor: 'white',
+          pointBorderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: { color: 'rgba(0,0,0,0.05)' }
+          },
+          x: {
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
